@@ -170,7 +170,7 @@ A process manager can keep the same Uvicorn command running. Before offering thi
 
 Reproduction steps, sanitized errors, and feature suggestions are welcome. A concrete case—music masking comic dialogue, subtitle drift after dubbing, or an unsuitable musical mood—is especially useful. Include OS, Python / FFmpeg versions, media format, and a minimal workflow. Confirm sharing rights before providing real media.
 
-This repository does not include a `LICENSE` yet. Public source visibility alone does not grant reuse or redistribution rights; those will be defined when the maintainer selects a license. API terms, generated-content rights, and dependency licenses apply separately.
+Code is provided under the [MIT License](LICENSE). API terms, generated-content rights, media-asset rights, and dependency licenses apply separately.
 
 ## ElevenLabs integration & pricing inquiries
 
