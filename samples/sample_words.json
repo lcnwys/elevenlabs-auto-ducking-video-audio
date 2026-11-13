@@ -1,0 +1,78 @@
+{
+  "text": "Hello there, welcome to the demo. Today we are testing automatic music ducking. Now let us hear the final result.",
+  "words": [
+    {
+      "start": 1,
+      "end": 1.55,
+      "text": "Hello",
+      "type": "word"
+    },
+    {
+      "start": 1.57,
+      "end": 1.95,
+      "text": "there",
+      "type": "word"
+    },
+    {
+      "start": 2,
+      "end": 2.55,
+      "text": "welcome",
+      "type": "word"
+    },
+    {
+      "start": 2.58,
+      "end": 3.4,
+      "text": "to the demo",
+      "type": "word"
+    },
+    {
+      "start": 4.5,
+      "end": 4.95,
+      "text": "Today",
+      "type": "word"
+    },
+    {
+      "start": 5.05,
+      "end": 5.5,
+      "text": "we are",
+      "type": "word"
+    },
+    {
+      "start": 5.6,
+      "end": 6.7,
+      "text": "testing automatic",
+      "type": "word"
+    },
+    {
+      "start": 6.85,
+      "end": 7.65,
+      "text": "music ducking",
+      "type": "word"
+    },
+    {
+      "start": 9.2,
+      "end": 9.7,
+      "text": "Now",
+      "type": "word"
+    },
+    {
+      "start": 9.8,
+      "end": 10.55,
+      "text": "let us hear",
+      "type": "word"
+    },
+    {
+      "start": 10.65,
+      "end": 11.3,
+      "text": "the final",
+      "type": "word"
+    },
+    {
+      "start": 11.4,
+      "end": 12.1,
+      "text": "result",
+      "type": "word"
+    }
+  ],
+  "demo_note": "Offline synthetic timings. Not returned by Scribe."
+}

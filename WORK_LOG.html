@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>开发记录</title>
+<style>:root{color-scheme:light dark;--bg:#fff;--fg:#202124;--line:#ccc}@media(prefers-color-scheme:dark){:root{--bg:#16181b;--fg:#e5e7eb;--line:#555}}body{max-width:960px;margin:32px auto;padding:0 20px;background:var(--bg);color:var(--fg);font:14px/1.6 system-ui}table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:10px;text-align:left}code{overflow-wrap:anywhere}</style>
+<h1>开发记录</h1><nav><a href="#music422">音乐生成 422 修复</a> · <a href="#python39">Python 3.9 启动修复</a></nav>
+<h2 id="music422">2026-10-24：音乐生成 HTTP 422 修复</h2>
+<p>视频上传 multipart 字段从 videos[] 改为 videos，匹配用户收到的服务端校验要求。既有模拟测试曾错误地要求 videos[]，已同步纠正。</p>
+<table><tr><th>项目</th><th>内容与证据</th></tr>
+<tr><td>依据</td><td>实际错误为 body.videos 缺失。<a href="https://elevenlabs.io/docs/api-reference/music/video-to-music">官方文档</a>字段定义为 videos，但 cURL 示例为 videos[]；本次以实际服务端要求为准。</td></tr>
+<tr><td>范围</td><td>elevenlabs_client.py 上传字段修正；tests/test_core.py 修正既有断言并增加实际 multipart 编码测试。模型、付费调用次数和生成流程保持原有设置。</td></tr>
+<tr><td>回归证据</td><td>修复前新增测试两例均因 videos 缺失失败；修复后 .venv/bin/python -m pytest -q：11 passed。覆盖参考音频开启和关闭、文件名、MIME、文件内容、描述与模型参数。</td></tr>
+<tr><td>限制</td><td>测试通过 httpx.MockTransport 在本地检查请求，没有调用付费音乐生成。真实生成结果待网页再次调用确认。当前目录没有 Git 仓库，无法提交或合并。</td></tr></table>
+<h2 id="python39">2026-10-24：Python 3.9 启动修复</h2>
+<p>已修复 macOS Python 3.9.6 启动时 Pydantic 无法解析联合类型的问题；现有启动脚本可以正常启动服务。</p>
+<table><tr><th>项目</th><th>内容与证据</th></tr>
+<tr><td>复现</td><td><code>.venv/bin/python -m pytest -q</code> 在收集测试时失败，错误为无法解析 <code>list[Segment] | None</code>。</td></tr>
+<tr><td>修改</td><td>app.py 与 core.py 共三处可选类型改用 Optional；启动说明.txt 的最低版本更新为 Python 3.9。未增加依赖。</td></tr>
+<tr><td>测试</td><td>同一 Python 3.9.6 环境运行现有测试：9 passed，包含离线样例渲染和手动讲话区间混音。</td></tr>
+<tr><td>启动验收</td><td><code>bash ./启动_Mac.command</code> 正常启动；首页与 /openapi.json 均返回 HTTP 200；/api/health 确认 FFmpeg 可用；脚本通过 bash -n。</td></tr>
+<tr><td>限制</td><td>本次未调用真实 ElevenLabs API。当前文件夹不是 Git 仓库，无法进行 Git diff、提交或合并。</td></tr></table>
+</html>

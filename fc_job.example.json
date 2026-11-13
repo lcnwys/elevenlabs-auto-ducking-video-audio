@@ -1,0 +1,19 @@
+{
+  "job_id": "demo-local-task",
+  "local_video": "samples/sample_video.mp4",
+  "local_music": "samples/sample_music.mp3",
+  "local_output": "runtime/fc_contract_output.mp4",
+  "speech_segments": [
+    {"start": 1.0, "end": 3.4},
+    {"start": 4.5, "end": 7.65},
+    {"start": 9.2, "end": 12.1}
+  ],
+  "mix": {
+    "reduction_db": 16,
+    "normal_music_db": -12,
+    "pre": 0.15,
+    "post": 0.25,
+    "attack": 0.15,
+    "release": 0.55
+  }
+}
