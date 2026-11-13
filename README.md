@@ -1,4 +1,4 @@
-# Dialogue Duck
+# ElevenLabs Auto Ducking — Video Audio Mixer
 
 **Let the music step back when your characters speak.**
 

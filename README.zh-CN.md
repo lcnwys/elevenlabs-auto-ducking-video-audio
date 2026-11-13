@@ -1,4 +1,4 @@
-# Dialogue Duck
+# ElevenLabs Auto Ducking — Video Audio Mixer
 
 **音乐退一步，让漫剧台词站到前面。**
 
